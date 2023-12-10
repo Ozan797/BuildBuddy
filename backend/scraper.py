@@ -1,3 +1,5 @@
+# This file is used for testing the scraper before deploying into the Flask server
+
 from bs4 import BeautifulSoup
 
 # Read the HTML content from the file
