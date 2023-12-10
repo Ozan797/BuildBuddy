@@ -1,29 +1,38 @@
-# This file is used for testing the scraper before deploying into the Flask server
-
+# Scraper for data
 from bs4 import BeautifulSoup
 
-# Read the HTML content from the file
-with open('website_content.html', 'r', encoding='utf-8') as file:
-    html_content = file.read()
+def scrape_cpu_info(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file: # Reads from file
+        html_content = file.read()
 
-# Create a BeautifulSoup object to parse the HTML
-soup = BeautifulSoup(html_content, 'html.parser')
+    soup = BeautifulSoup(html_content, 'html.parser')
 
-# Find all CPU Names
-cpu_names = soup.find_all(class_='ProductName-sc-d3c4p4-6')[:24]  # Limit to 24 items
+    cpu_names = soup.find_all(class_='ProductName-sc-d3c4p4-6')[:24]
+    cpu_prices = soup.find_all('span', class_='PriceLabel-sc-lboeq9-0')[:24]
 
-# Find all CPU prices
-cpu_prices = soup.find_all('span', class_='PriceLabel-sc-lboeq9-0')[:24]  # Limit to 24 items
+    cpu_info_list = []
+    for name, price in zip(cpu_names, cpu_prices):
+        cpu_info_list.append({
+            'name': name.get_text(strip=True),
+            'price': price.get_text(strip=True)
+        })
 
-# Ensure both CPU names and prices have the same length
-if len(cpu_names) == len(cpu_prices):
-    # Zip CPU names and prices together
-    cpu_info = zip(cpu_names, cpu_prices)
+    return cpu_info_list
 
-    # Print CPU name and price pairs
-    for name, price in cpu_info:
-        print("CPU Name:", name.get_text(strip=True))
-        print("CPU Price:", price.get_text(strip=True))
-        print("------------------------")
-else:
-    print("The number of CPU names and prices doesn't match. Check your data.")
+def scrape_cpu_info_pg2 (file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        html_content = file.read()
+        
+    soup = BeautifulSoup(html_content, "html.parser")
+    
+    cpu_names = soup.find_all(class_="ProductName-sc-d3c4p4-6")[:24]
+    cpu_prices = soup.find_all("span", class_="PriceLabel-sc-lboeq9-0")[:24]
+    
+    cpu_info_list = []
+    for name,price in zip(cpu_names, cpu_prices):
+        cpu_info_list.append({
+            "name": name.get_text(strip=True),
+            "price": price.get_text(strip=True),
+        })
+        
+    return cpu_info_list

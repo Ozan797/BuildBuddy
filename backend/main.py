@@ -1,33 +1,20 @@
+# Flask Server
 from flask import Flask, jsonify
-from bs4 import BeautifulSoup
+from scraper import scrape_cpu_info
 
 app = Flask(__name__)
 
-# Read the HTML content from the file
-with open('website_content.html', 'r', encoding='utf-8') as file:
-    html_content = file.read()
+# Path to your HTML content
+CPU_INFO_PG1 = 'cpu_info_pg1.html'
+CPU_INFO_PG2 = 'cpu_info_pg2.html'
 
-# Create a BeautifulSoup object to parse the HTML
-soup = BeautifulSoup(html_content, 'html.parser')
-
-# Find all CPU Names and limit to 24 items
-cpu_names = soup.find_all(class_='ProductName-sc-d3c4p4-6')[:24]
-
-# Find all CPU prices and limit to 24 items
-cpu_prices = soup.find_all('span', class_='PriceLabel-sc-lboeq9-0')[:24]
-
-# Ensure both CPU names and prices have the same length
-if len(cpu_names) == len(cpu_prices):
-    # Create a route to serve CPU information
-    @app.route('/cpu_info', methods=['GET'])
-    def get_cpu_info():
-        cpu_info_list = []
-        for name, price in zip(cpu_names, cpu_prices):
-            cpu_info_list.append({
-                'name': name.get_text(strip=True),
-                'price': price.get_text(strip=True)
-            })
-        return jsonify({'cpu_info': cpu_info_list})
+@app.route('/cpu_info', methods=['GET']) # GET route for CPU Info
+def get_cpu_info():
+    cpu_info_pg1 = scrape_cpu_info(CPU_INFO_PG1) # Runs function for that webpage
+    cpu_info_pg2 = scrape_cpu_info(CPU_INFO_PG2) # Runs function for that webpage
+    cpu_info = cpu_info_pg1 + cpu_info_pg2
+    
+    return jsonify({'cpu_info': cpu_info})
 
 if __name__ == '__main__':
-    app.run(debug=True)  # Run the Flask app
+    app.run(debug=True)
