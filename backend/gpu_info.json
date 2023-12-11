@@ -1,0 +1,530 @@
+[
+    {
+        "name": "Sapphire Radeon RX 6700 XT Pulse HDMI 3xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3329.49"
+    },
+    {
+        "name": "Asus GeForce RTX 4070 Dual OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3554.42"
+    },
+    {
+        "name": "Zotac Gaming GeForce RTX 4090 Trinity OC HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,599.99"
+    },
+    {
+        "name": "Asus GeForce RTX 4090 ROG Strix Gaming OC 2xHDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,960.80"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4070 Windforce Triple Fan OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3555.47"
+    },
+    {
+        "name": "PowerColor Radeon RX 6700 XT Fighter HDMI 3xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3313.98"
+    },
+    {
+        "name": "XFX Radeon RX 6800 XT Speedster MERC319 Core HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3503.00"
+    },
+    {
+        "name": "XFX Radeon RX 7900 XT Speedster MERC310 Ultra HDMI 3xDP 20GB",
+        "brand": "AMD Radeon",
+        "memory": "20GB",
+        "price": "\u00a3749.99"
+    },
+    {
+        "name": "Zotac Gaming GeForce RTX 4090 Trinity HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,711.99"
+    },
+    {
+        "name": "Asus TUF Gaming GeForce RTX 4070 Ti 2xHDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3829.99"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 3060 Ti Eagle OC D6X 2xHDMI 2xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3329.00"
+    },
+    {
+        "name": "MSI GeForce RTX 4090 SUPRIM LIQUID X HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,799.71"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4090 Gaming OC HDMI 3x DP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,729.99"
+    },
+    {
+        "name": "Gigabyte Radeon RX 7800 XT Gaming OC 2xHDMI 2xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3529.99"
+    },
+    {
+        "name": "Intel Arc A770 HDMI 3xDP 16GB",
+        "brand": "Intel ARC",
+        "memory": "16GB",
+        "price": "\u00a3326.77"
+    },
+    {
+        "name": "Sapphire Radeon RX 7800 XT Pulse 2xHDMI 2xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3504.98"
+    },
+    {
+        "name": "PowerColor Radeon RX 7800 XT HellHound HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3502.42"
+    },
+    {
+        "name": "XFX Radeon RX 6750 XT Speedster QICK319 Core HDMI 3xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3324.98"
+    },
+    {
+        "name": "Palit GeForce RTX 4090 GameRock Omniblack HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,749.99"
+    },
+    {
+        "name": "MSI GeForce RTX 3060 Ventus 2X OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3261.85"
+    },
+    {
+        "name": "MSI GeForce RTX 4060 Ti Ventus 2X Black OC HDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a3425.59"
+    },
+    {
+        "name": "MSI GeForce RTX 4070 Ventus 2X E OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3549.97"
+    },
+    {
+        "name": "Gigabyte Radeon RX 7900 XTX Gaming OC 2xHDMI 2xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a3947.38"
+    },
+    {
+        "name": "XFX Radeon RX 7800 XT Speedster QICK 319 Core Edition HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3529.98"
+    },
+    {
+        "name": "Asus GeForce RTX 4060 Ti Dual OC HDMI 3xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3329.00"
+    },
+    {
+        "name": "MSI Radeon RX 7900 XTX Gaming Trio Classic HDMI 3xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a3906.00"
+    },
+    {
+        "name": "MSI GeForce RTX 4090 Gaming X Trio HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,793.06"
+    },
+    {
+        "name": "Sapphire Radeon RX 7800 XT Gaming Nitro+ 2xHDMI 2xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3559.98"
+    },
+    {
+        "name": "MSI GeForce RTX 4060 Ti Gaming X Slim HDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a3483.48"
+    },
+    {
+        "name": "Asus GeForce RTX 4090 TUF Gaming OC 2xHDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,817.55"
+    },
+    {
+        "name": "Asus Radeon RX 6650 XT Dual V2 OC HDMI 3xDP 8GB",
+        "brand": "AMD Radeon",
+        "memory": "8GB",
+        "price": "\u00a3229.99"
+    },
+    {
+        "name": "PowerColor Radeon RX 7900 XTX Hellhound HDMI 3xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a3886.32"
+    },
+    {
+        "name": "Sapphire Radeon RX 7900 XT Pulse 2xHDMI 2xDP 20GB",
+        "brand": "AMD Radeon",
+        "memory": "20GB",
+        "price": "\u00a3753.86"
+    },
+    {
+        "name": "Asus GeForce RTX 4080 ROG Strix Gaming 2xHDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a31,399.99"
+    },
+    {
+        "name": "MSI GeForce RTX 4090 Ventus 3X OC HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,727.19"
+    },
+    {
+        "name": "MSI GeForce RTX 4070 Ventus 2X OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3559.94"
+    },
+    {
+        "name": "Gainward GeForce RTX 3090 Phantom GS HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a3800.00"
+    },
+    {
+        "name": "Zotac GeForce RTX 4070 Ti Trinity HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3782.92"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4060 Ti Eagle 2xHDMI 2xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3394.70"
+    },
+    {
+        "name": "PowerColor Radeon RX 6800 XT Red Dragon HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3353.32"
+    },
+    {
+        "name": "MSI GeForce RTX 4090 SUPRIM X HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,839.99"
+    },
+    {
+        "name": "Asus TUF Gaming Radeon RX 7800 XT OC Edition HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3549.98"
+    },
+    {
+        "name": "MSI Radeon RX 6750 XT Gaming X Trio HDMI 3xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3359.99"
+    },
+    {
+        "name": "XFX Radeon RX 6700 XT Speedster SWFT309 Core HDMI 3xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3331.00"
+    },
+    {
+        "name": "ASRock Radeon RX 7900 XTX Taichi OC HDMI 3xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a3953.77"
+    },
+    {
+        "name": "Zotac GeForce RTX 4060 Ti Twin Edge HDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a3443.99"
+    },
+    {
+        "name": "XFX Radeon RX 6800 Speedster SWFT319 Core HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3389.99"
+    },
+    {
+        "name": "Asus Radeon RX 6750 XT Dual OC HDMI 3xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3359.99"
+    },
+    {
+        "name": "Asus GeForce RTX 4090 TUF Gaming 2xHDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,797.60"
+    },
+    {
+        "name": "Asus Radeon RX 6600 Dual V2 HDMI 3xDP 8GB",
+        "brand": "AMD Radeon",
+        "memory": "8GB",
+        "price": "\u00a3194.99"
+    },
+    {
+        "name": "MSI GeForce RTX 4080 Gaming X Trio HDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a31,179.95"
+    },
+    {
+        "name": "PowerColor Radeon RX 6600 Fighter HDMI 3xDP 8GB",
+        "brand": "AMD Radeon",
+        "memory": "8GB",
+        "price": "\u00a3189.98"
+    },
+    {
+        "name": "Asus TUF Gaming Radeon RX 7900 XTX OC HDMI 3xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a3964.80"
+    },
+    {
+        "name": "Asus GeForce RTX 4090 TUF Gaming OG OC 2xHDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,756.49"
+    },
+    {
+        "name": "Sapphire Radeon RX 7900 XTX Nitro+ OC 2xHDMI 2xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a31,052.83"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4060 Eagle OC 2xHDMI 2xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3299.00"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4070 Eagle OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3559.98"
+    },
+    {
+        "name": "Asus ROG Strix Gaming GeForce RTX 4070 Ti 2xHDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3893.22"
+    },
+    {
+        "name": "PowerColor Radeon RX 6950 XT Red Devil HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3629.99"
+    },
+    {
+        "name": "ASRock Radeon RX 7900 XTX AQUA OC HDMI 3xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a31,199.99"
+    },
+    {
+        "name": "Asus GeForce RTX 3060 Ti GDDR6X Dual White OC HDMI 3xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3341.13"
+    },
+    {
+        "name": "MSI GeForce RTX 4070 Ti Ventus 3X E OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3799.99"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4080 EAGLE HDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a31,149.93"
+    },
+    {
+        "name": "Asus GeForce RTX 4080 ROG Strix Gaming OC 2xHDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a31,454.99"
+    },
+    {
+        "name": "ASRock Radeon RX 6800 XT Phantom Gaming D OC HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3537.99"
+    },
+    {
+        "name": "MSI GeForce RTX 4070 Ti Ventus 3X OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3793.80"
+    },
+    {
+        "name": "MSI GeForce RTX 4070 Ventus 2X White OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3565.97"
+    },
+    {
+        "name": "nVidia GeForce RTX 4070 HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3587.99"
+    },
+    {
+        "name": "ASRock Radeon RX 7900 XTX Phantom Gaming OC HDMI 3xDP 24GB",
+        "brand": "AMD Radeon",
+        "memory": "24GB",
+        "price": "\u00a3888.89"
+    },
+    {
+        "name": "XFX Radeon RX 7900 XT HDMI 2xDP USB-C 20GB",
+        "brand": "AMD Radeon",
+        "memory": "20GB",
+        "price": "\u00a3729.00"
+    },
+    {
+        "name": "MSI GeForce RTX 4060 Ventus 2X Black OC HDMI 3xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3295.78"
+    },
+    {
+        "name": "Gigabyte GeForce RTX 4070 Ti Gaming OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3799.99"
+    },
+    {
+        "name": "Asus GeForce RTX 4090 ROG Strix Gaming OC White Edition 2xHDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a32,008.95"
+    },
+    {
+        "name": "MSI GeForce RTX 4070 Ventus 3X E OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3573.98"
+    },
+    {
+        "name": "Sapphire Radeon RX 7700 XT Pulse 2xHDMI 2xDP 12GB",
+        "brand": "AMD Radeon",
+        "memory": "12GB",
+        "price": "\u00a3409.85"
+    },
+    {
+        "name": "MSI GeForce RTX 4060 Ti Gaming X HDMI 3xDP 8GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "8GB",
+        "price": "\u00a3389.99"
+    },
+    {
+        "name": "Gigabyte Aorus GeForce RTX 4090 Master HDMI 3x DP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,825.90"
+    },
+    {
+        "name": "Asus GeForce RTX 4090 ROG Strix Gaming 2xHDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,985.48"
+    },
+    {
+        "name": "Palit GeForce RTX 4090 GameRock HDMI 3xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,649.99"
+    },
+    {
+        "name": "Palit GeForce RTX 4070 Dual HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3559.98"
+    },
+    {
+        "name": "XFX Radeon RX 6950 XT Speedster MERC319 Black HDMI 3xDP 16GB",
+        "brand": "AMD Radeon",
+        "memory": "16GB",
+        "price": "\u00a3924.52"
+    },
+    {
+        "name": "Asus GeForce RTX 3060 Dual OC V2 HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3237.30"
+    },
+    {
+        "name": "Asus TUF Gaming GeForce RTX 4070 OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3622.70"
+    },
+    {
+        "name": "Asus GeForce RTX 4080 ProArt OC HDMI 3xDP 16GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "16GB",
+        "price": "\u00a31,279.99"
+    },
+    {
+        "name": "Zotac Gaming GeForce RTX 4070 Twin Edge OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3569.96"
+    },
+    {
+        "name": "Asus GeForce RTX 3080 TUF Gaming OC V2 2xHDMI 3xDP 10GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "10GB",
+        "price": "\u00a3707.59"
+    },
+    {
+        "name": "Asus GeForce RTX 4070 Dual White OC HDMI 3xDP 12GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "12GB",
+        "price": "\u00a3586.46"
+    },
+    {
+        "name": "MSI GeForce RTX 4090 Ventus 3X E OC 2xHDMI 2xDP 24GB",
+        "brand": "NVIDIA GeForce",
+        "memory": "24GB",
+        "price": "\u00a31,695.32"
+    }
+]
