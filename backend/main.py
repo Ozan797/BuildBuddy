@@ -1,23 +1,17 @@
 # Flask Server
 from flask import Flask, jsonify
-from scraper import scrape_cpu_info, scrape_gpu_info
+from scraper import scrape_cpu_info_from_url, scrape_gpu_info
 
 app = Flask(__name__)
 
-# Path to your HTML content
-CPU_INFO_PG1 = 'cpu_info_pg1.html'
-CPU_INFO_PG2 = 'cpu_info_pg2.html'
-CPU_INFO_PG3 = 'cpu_info_pg3.html'
+# URL to scrape CPU info
+CPU_INFO_URL = 'https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500'
 
-@app.route('/cpu_info', methods=['GET']) # GET route for CPU Info
+@app.route('/cpu_info', methods=['GET'])  # GET route for CPU Info
 def get_cpu_info():
-    cpu_info_pg1 = scrape_cpu_info(CPU_INFO_PG1) # Runs function for that webpage
-    cpu_info_pg2 = scrape_cpu_info(CPU_INFO_PG2) # Runs function for that webpage
-    cpu_info_pg3 = scrape_cpu_info(CPU_INFO_PG3) # Runs function for that webpage
-    cpu_info = cpu_info_pg1 + cpu_info_pg2 + cpu_info_pg3
+    cpu_info = scrape_cpu_info_from_url(CPU_INFO_URL)  # Scrape CPU info from URL
     
     return jsonify({'cpu_info': cpu_info})
-
 # GPU's
 gpu_info_pg1_path = "gpu_info_pg1.html"
 
