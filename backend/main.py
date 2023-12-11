@@ -7,12 +7,14 @@ app = Flask(__name__)
 # Path to your HTML content
 CPU_INFO_PG1 = 'cpu_info_pg1.html'
 CPU_INFO_PG2 = 'cpu_info_pg2.html'
+CPU_INFO_PG3 = 'cpu_info_pg3.html'
 
 @app.route('/cpu_info', methods=['GET']) # GET route for CPU Info
 def get_cpu_info():
     cpu_info_pg1 = scrape_cpu_info(CPU_INFO_PG1) # Runs function for that webpage
     cpu_info_pg2 = scrape_cpu_info(CPU_INFO_PG2) # Runs function for that webpage
-    cpu_info = cpu_info_pg1 + cpu_info_pg2
+    cpu_info_pg3 = scrape_cpu_info(CPU_INFO_PG3) # Runs function for that webpage
+    cpu_info = cpu_info_pg1 + cpu_info_pg2 + cpu_info_pg3
     
     return jsonify({'cpu_info': cpu_info})
 
