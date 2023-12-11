@@ -32,3 +32,25 @@ def _scrape_cpu_info_from_html(file_path):
             }) # Otherwise won't be added to the array
 
     return cpu_info_list
+
+def scrape_gpu_info(file_path):
+    return _scrape_gpu_info_from_html(file_path)
+
+def _scrape_gpu_info_from_html(file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        html_content = file.read()
+        
+    soup = BeautifulSoup(html_content, "html.parser")
+    
+    gpu_names = soup.find_all('h3', class_='ProductNameTable-sc-1stvbsu-3 bbvppQ')
+    
+    gpu_info_list = []
+    
+    for name in gpu_names:
+        gpu_info_list.append({
+            'name': name.get_text(strip=True)
+        })
+    
+    return gpu_info_list
+    
+

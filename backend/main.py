@@ -1,6 +1,6 @@
 # Flask Server
 from flask import Flask, jsonify
-from scraper import scrape_cpu_info
+from scraper import scrape_cpu_info, scrape_gpu_info
 
 app = Flask(__name__)
 
@@ -17,6 +17,15 @@ def get_cpu_info():
     cpu_info = cpu_info_pg1 + cpu_info_pg2 + cpu_info_pg3
     
     return jsonify({'cpu_info': cpu_info})
+
+# GPU's
+gpu_info_pg1_path = "gpu_info_pg1.html"
+
+@app.route("/gpu_info", methods=["GET"])
+def get_gpu_info():
+    gpu_info = scrape_gpu_info(gpu_info_pg1_path)
+    
+    return jsonify({"gpu_info": gpu_info})
 
 if __name__ == '__main__':
     app.run(debug=True)
