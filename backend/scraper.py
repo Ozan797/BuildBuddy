@@ -60,15 +60,19 @@ def scrape_gpu_info_from_url(url):
             full_name = item.find('h3', class_='ProductNameTable-sc-1stvbsu-3 bbvppQ').get_text(strip=True)
             price = item.find("span", class_="PriceLabel-sc-lboeq9-0").get_text(strip=True)
             extracted_price = re.search(r'£[\d,.]+', price)
+            price_value = None
 
             memory = ''
             gpu_properties = item.find_all('div', class_='PropertyContainer-sc-1stvbsu-11 TVmeo')
             for prop in gpu_properties:
                 if 'gb' in prop.get_text(strip=True).lower():
-                    memory = prop.get_text(strip=True)
+                    memory_text = prop.get_text(strip=True).lower()
+                    memory = int(re.search(r'\d+', memory_text).group()) if re.search(r'\d+', memory_text) else ''
                     break
 
             if extracted_price:
+                price_value = float(extracted_price.group()[1:].replace(',', ''))  # Convert price to float
+
                 brand = ''
                 if any(keyword in full_name.lower() for keyword in ['geforce', 'radeon', 'intel']):
                     if 'geforce' in full_name.lower():
@@ -84,7 +88,7 @@ def scrape_gpu_info_from_url(url):
                         'name': full_name,
                         'brand': brand,
                         'memory': memory,
-                        'price': extracted_price.group()
+                        'price': price_value
                     })
 
     return filter_empty_gpu_fields(gpu_info_list)
