@@ -17,7 +17,7 @@ def fetch_website_content(url):
         return None
 
 # URL of the website to create a file of
-url_to_fetch = 'https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500' # Change this url for page HTML code
+url_to_fetch = 'https://pricespy.co.uk/c/ddr4-memory' # Change this url for page HTML code
 website_content = fetch_website_content(url_to_fetch)
 
 if website_content:
