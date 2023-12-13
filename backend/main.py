@@ -1,5 +1,5 @@
 from flask import Flask, jsonify  # Import Flask framework for creating APIs and JSON response handling
-from scraper import scrape_cpu_info_from_url, scrape_gpu_info_from_url  # Import functions to scrape CPU and GPU info
+from scraper import scrape_cpu_info_from_url, scrape_gpu_info_from_url,scrape_ram_info_from_url  # Import functions to scrape CPU and GPU info
 import concurrent.futures  # Import module for concurrent execution
 
 app = Flask(__name__)  # Create an instance of the Flask app
@@ -54,6 +54,29 @@ def get_gpu_info():
                     seen_gpus.add(gpu['name'])  # Add GPU name to the set of seen GPUs
 
     return jsonify({"gpu_info": gpu_info})  # Return JSON response with GPU info
+
+@app.route("/ram_info", methods=["GET"])  # Route to get GPU info
+def get_ram_info():
+    # GPU URLs to scrape
+    ram_urls_to_scrape = [
+        "https://pricespy.co.uk/c/ddr4-memory",
+        "https://pricespy.co.uk/c/ddr4-memory?offset=44",
+    ]
+    
+    ram_info = []  # List to store ram info
+    seen_rams = set()  # Set to store seen ram names to check for duplicates
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        # Scrape ram info concurrently using ThreadPoolExecutor
+        futures = [executor.submit(scrape_ram_info_from_url, url) for url in ram_urls_to_scrape]
+        for future in concurrent.futures.as_completed(futures):
+            info = future.result()  # Get the result of the completed task
+            for ram in info:
+                if ram['name'] not in seen_rams:  # Check for duplicates
+                    ram_info.append(ram)  # Add ram info to the list
+                    seen_rams.add(ram['name'])  # Add ram name to the set of seen rams
+
+    return jsonify({"ram_info": ram_info})  # Return JSON response with ram info
 
 if __name__ == '__main__':  # Run the Flask app if this script is executed directly
     app.run(debug=True)  # Start the Flask application with debugging enabled

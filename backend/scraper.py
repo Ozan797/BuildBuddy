@@ -88,3 +88,70 @@ def scrape_gpu_info_from_url(url):
                     })
 
     return filter_empty_gpu_fields(gpu_info_list)
+
+# Remove RAM entries with empty fields
+def filter_empty_ram_fields(data):
+    required_fields = ['name', 'price', 'frequency', 'brand', 'ram_type']
+    filtered_data = [entry for entry in data if all(entry.get(field) for field in required_fields)]
+    return filtered_data
+
+# Scrape RAM information from a URL
+def scrape_ram_info_from_url(url):
+    ram_info_list = []
+
+    # Fetch HTML content
+    response = requests.get(url)
+    if response.status_code == 200:
+        # Parse HTML content using BeautifulSoup
+        html_content = response.text
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        # Find product names and prices
+        product_names = soup.find_all(class_='ProductNameTable-sc-1stvbsu-3 bbvppQ')
+        product_prices = soup.find_all('span', {'class': 'PriceLabel-sc-lboeq9-0'})[:len(product_names)]
+
+        # Extract information for each RAM product
+        for name, price in zip(product_names, product_prices):
+            # Extracting price value
+            price_text = price.text.strip()
+            price_value = None
+            if '£' in price_text:
+                price_parts = price_text.split('£')
+                for part in price_parts:
+                    if part:
+                        try:
+                            part_value = float(''.join(filter(str.isdigit, part))) / 100
+                            if part_value:
+                                price_value = part_value
+                                break
+                        except ValueError:
+                            pass
+
+            # Cleaning product names
+            clean_name = name.text.strip().split('(')[0].strip()
+
+            # Extracting brand from the product name
+            brand = clean_name.split()[0]  # Extracting the first word as brand
+
+            # Extracting MHz information from the product name
+            frequency = ''
+            if 'MHz' in clean_name:
+                frequency = clean_name.split('MHz')[0].split()[-1]
+                if frequency.isdigit():  # Ensuring it's a digit
+                    frequency = int(frequency)
+
+            # Extracting RAM type information from the product name
+            ram_type = 'DDR4' if 'DDR4' in clean_name else ''  # Checking if 'DDR4' is present in the name
+
+            # Check if the RAM entry exists and add to the RAM info list
+            ram_exists = any(ram['name'] == clean_name for ram in ram_info_list)
+            if not ram_exists and price_value is not None:
+                ram_info_list.append({
+                    'name': clean_name,
+                    'price': price_value,
+                    'frequency': frequency,
+                    'brand': brand,
+                    "ram_type": ram_type,
+                })
+
+    return filter_empty_ram_fields(ram_info_list)
