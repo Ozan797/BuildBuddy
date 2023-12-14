@@ -174,3 +174,46 @@ def scrape_ram_info_from_url(url):
                 })
 
     return filter_empty_ram_fields(ram_info_list)
+
+# Function to filter PSU entries with empty fields
+def filter_empty_psu_fields(data):
+    required_fields = ['name', 'price', 'power']
+    filtered_data = [entry for entry in data if all(entry.get(field) for field in required_fields)]
+    return filtered_data
+
+# Function to scrape PSU information from the given URL
+def scrape_psu_info_from_url(url):
+    psu_info_list = []
+
+    response = requests.get(url)
+    if response.status_code == 200:
+        html_content = response.text
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        # Find PSU items
+        psu_items = soup.find_all('h3')
+
+        for item in psu_items:
+            full_name = item.get_text(strip=True)
+            price_element = item.find_next('span', class_="Text--o69vef")
+            price = price_element.get_text(strip=True) if price_element else ''
+            extracted_price = re.search(r'£[\d,.]+', price)
+            price_value = None
+
+            power = ''
+            wattage_match = re.search(r'(\d+)\s*W', full_name)
+            if wattage_match:
+                power = int(wattage_match.group(1))
+
+            if extracted_price:
+                price_value = float(extracted_price.group()[1:].replace(',', ''))  # Convert price to float
+
+                psu_exists = any(psu['name'] == full_name for psu in psu_info_list)
+                if not psu_exists:
+                    psu_info_list.append({
+                        'name': full_name,
+                        'price': price_value,
+                        'power': power
+                    })
+
+    return filter_empty_psu_fields(psu_info_list)

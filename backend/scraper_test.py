@@ -1,45 +1,34 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import re
 
-url = "https://pricespy.co.uk/c/ddr4-memory"
+url = "https://pricespy.co.uk/c/power-supplies"
 
 # Send a GET request to the URL
 response = requests.get(url)
 
-# Parse the HTML content using BeautifulSoup
 soup = BeautifulSoup(response.content, 'html.parser')
 
-product_names = soup.find_all(class_='ProductNameTable-sc-1stvbsu-3 bbvppQ')
-product_prices = soup.find_all('span', {'class': 'PriceLabel-sc-lboeq9-0'})[:len(product_names)]
+# Extract power supply names and prices
+product_names = soup.find_all('h3')
+power_supply_names = [name.text.strip() for name in product_names if "W" in name.text]
 
-products_data = []
-for name, price in zip(product_names, product_prices):
-    price_text = price.text.strip()
-    price_value = None
-    if '£' in price_text:
-        price_parts = price_text.split('£')
-        for part in price_parts:
-            if part:
-                try:
-                    part_value = float(''.join(filter(str.isdigit, part))) / 100
-                    if part_value:
-                        price_value = part_value
-                        break
-                except ValueError:
-                    pass
+product_prices = soup.find_all('span')
+prices_without_incl_delivery = [
+    span.text.strip() 
+    for span in product_prices 
+    if re.search(r'£', span.text) and "Incl. delivery" not in span.text
+]
 
-    product = {
-        "name": name.text.strip(),
-        "price": price_value
-    }
-    products_data.append(product)
+# Extract wattage (power) information using regular expression
+wattages = [int(re.search(r'(\d+)\s*W', name).group(1)) if re.search(r'(\d+)\s*W', name) else 0 for name in power_supply_names]
 
-# Filter out entries with NULL price values
-products_data = [product for product in products_data if product['price'] is not None]
+# Combine names, prices, and wattages
+products_data = [{"name": name, "price": price, "power": wattage} for name, price, wattage in zip(power_supply_names, prices_without_incl_delivery, wattages)]
 
 # Write data to a JSON file
-with open('ram_info.json', 'w') as file:
+with open('info.json', 'w') as file:
     json.dump(products_data, file, indent=4)
 
-print("Data without NULL prices has been written to ram_info.json file.")
+print("Data with names, prices, and power information has been written to info.json file.")
