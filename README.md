@@ -22,7 +22,6 @@ The project has these key components
     - __`/gpu_info`__: Contains info for GPUs
     - __`/ram_info`__: Contains info for RAM
     - __`/psu_info`__: Contains info for Power Supplies
-    - __`/cases_info`__: Contains info for Cases
  
 ## How to Run Project
 - __Backend:__
