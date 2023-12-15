@@ -1,8 +1,10 @@
 from flask import Flask, jsonify  # Import Flask framework for creating APIs and JSON response handling
 from scraper import scrape_cpu_info_from_url, scrape_gpu_info_from_url,scrape_ram_info_from_url, scrape_psu_info_from_url  # Import functions to scrape CPU and GPU info
 import concurrent.futures  # Import module for concurrent execution
+from flask_cors import CORS
 
 app = Flask(__name__)  # Create an instance of the Flask app
+CORS(app)
 
 @app.route("/", methods=["GET"])  # Define a route for the root URL ("/") with GET method
 def first_page():
