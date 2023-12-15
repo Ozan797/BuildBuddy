@@ -21,7 +21,8 @@ class TestScrapingFunctions(unittest.TestCase):
         if cpu_data:
             for cpu in cpu_data:
                 # Check if 'price' is a non-negative number
-                self.assertIsInstance(cpu["price"], (int,float))
+                price = cpu["price"]
+                self.assertIsInstance(cpu["price"], (float), f"CPU price '{price}' is not a float for CPU: {cpu['name']}")
                 self.assertGreaterEqual(cpu["price"], 0)
 
                 # Check if 'name' and 'brand' are non-empty strings
@@ -36,3 +37,22 @@ class TestScrapingFunctions(unittest.TestCase):
                     self.assertGreater(cpu['frequency'], 0)
         
         print("CPU Test: 'test_cpu_scraping' Succeeded!")
+        
+    def test_gpu_scraping(self):
+        gpu_data_url = "https://pricespy.co.uk/c/graphics-cards"
+        gpu_data = scrape_gpu_info_from_url(gpu_data_url)
+        self.assertIsNotNone(gpu_data)
+        
+        if gpu_data:
+            for gpu in gpu_data:
+                price = gpu["price"]
+                # Make sure price is not negative and is a "int" or "float"
+                self.assertIsInstance(gpu["price"], (float), f"GPU price '{price}' is not a float for GPU: {gpu['name']}")
+                self.assertGreater(gpu["price"], 0)
+                
+                brands = {gpu['brand'] for gpu in gpu_data}  # Extract unique brands
+                # Check if at least one of the expected brands is present in the scraped data
+                expected_brands = {'NVIDIA GeForce', 'AMD Radeon', 'Intel ARC'}
+                self.assertTrue(brands.intersection(expected_brands), "None of the expected brands found in the GPU data")
+
+        print("GPU Test: 'test_gpu_scraping' Succeeded!")
