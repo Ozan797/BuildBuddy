@@ -1,34 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Cpus, Gpus, Ram, PowerSupplies, ErrorPage } from "./pages";
 
 function App() {
-  const [responseData, setResponseData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('http://127.0.0.1:5000/psu_info'); // Replace this URL with your API endpoint
-        setResponseData(response.data); // Assuming the response is JSON
-      } catch (error) {
-        // Handle error, for instance, set an error state
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
   return (
-    
     <>
-      <div>
-      {responseData ? (
-        <pre>{JSON.stringify(responseData, null, 2)}</pre>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" />
+          <Route path="/cpus" element={<Cpus />} />
+          <Route path="/gpus" element={<Gpus />} />
+          <Route path="/ram" element={<Ram />} />
+          <Route path="/power-supplies" element={<PowerSupplies />} />
+          <Route path="/*" element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
