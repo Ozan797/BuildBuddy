@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../../components/Card/Card";
-
+import styles from "./Cpus.module.css"
 const Cpus = () => {
   const [cpuData, setCpuData] = useState([]);
 
@@ -19,10 +19,13 @@ const Cpus = () => {
   };
 
   return (
-    <>
+    <section>
       <h1>CPU Page</h1>
+      
+      <div className={styles.gridContainer}>
       <Card data={cpuData} />
-    </>
+      </div>
+    </section>
   );
 };
 

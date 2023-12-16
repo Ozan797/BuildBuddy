@@ -1,0 +1,14 @@
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust width as needed */
+    grid-template-rows: repeat(auto-fill, 1fr); /* Allow limitless rows */
+    max-width: 500px; /* Limiting the width to fit 4 columns */
+    gap: 20px; /* Adjust gap between columns/rows */
+    padding: 15px; /* Optional padding */
+}
