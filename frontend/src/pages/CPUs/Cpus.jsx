@@ -4,13 +4,14 @@ import styles from "./Cpus.module.css"
 const Cpus = () => {
   const [cpuData, setCpuData] = useState([]);
 
+  const url = "http://127.0.0.1:5000/cpu_info"
   useEffect(() => {
     fetchCPUData();
   }, []);
 
   const fetchCPUData = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/cpu_info");
+      const response = await fetch(url);
       const cpuApiResponse = await response.json();
       setCpuData(cpuApiResponse);
     } catch (error) {
