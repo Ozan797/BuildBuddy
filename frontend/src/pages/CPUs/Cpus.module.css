@@ -2,6 +2,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .gridContainer {
@@ -12,3 +13,13 @@ section {
     gap: 20px; /* Adjust gap between columns/rows */
     padding: 15px; /* Optional padding */
 }
+
+.items {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+

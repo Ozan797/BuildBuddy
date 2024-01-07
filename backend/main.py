@@ -1,4 +1,4 @@
-from flask import Flask, jsonify  # Import Flask framework for creating APIs and JSON response handling
+from flask import Flask, jsonify, request  # Import Flask framework for creating APIs and JSON response handling
 from scraper import scrape_cpu_info_from_url, scrape_gpu_info_from_url,scrape_ram_info_from_url, scrape_psu_info_from_url  # Import functions to scrape CPU and GPU info
 import concurrent.futures  # Import module for concurrent execution
 from flask_cors import CORS
@@ -6,12 +6,10 @@ from flask_cors import CORS
 app = Flask(__name__)  # Create an instance of the Flask app
 CORS(app)
 
-@app.route("/", methods=["GET"])  # Define a route for the root URL ("/") with GET method
-def first_page():
-    return "Welcome"  # Return a simple welcome message for the root URL
-
 @app.route('/cpu_info', methods=['GET'])  # Route to get CPU info
 def get_cpu_info():
+    search_query = request.args.get('search_query')  # Get the search query from the request URL
+
     # URLs to scrape CPU info
     cpu_urls_to_scrape = [
         "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500",
@@ -28,11 +26,34 @@ def get_cpu_info():
         for future in concurrent.futures.as_completed(futures):
             info = future.result()  # Get the result of the completed task
             for cpu in info:
-                if cpu['name'] not in seen_cpus:  # Check for duplicates
-                    cpu_info.append(cpu)  # Add CPU info to the list
-                    seen_cpus.add(cpu['name'])  # Add CPU name to the set of seen CPUs
+                if search_query is None or search_query.lower() in cpu['name'].lower():
+                    # If no search query or CPU name contains the search query, add it to CPU info
+                    if cpu['name'] not in seen_cpus:  # Check for duplicates
+                        cpu_info.append(cpu)  # Add CPU info to the list
+                        seen_cpus.add(cpu['name'])  # Add CPU name to the set of seen CPUs
 
     return jsonify({'cpu_info': cpu_info})  # Return JSON response with CPU info
+@app.route('/amd_cpus', methods=['GET'])  # Route to get AMD CPUs only
+def get_amd_cpus():
+    cpu_urls_to_scrape = [
+        "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500",
+        "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500?offset=24",
+        "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500?offset=48",
+    ]
+
+    amd_cpus = []  # List to store AMD CPU info
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures = [executor.submit(scrape_cpu_info_from_url, url) for url in cpu_urls_to_scrape]
+        for future in concurrent.futures.as_completed(futures):
+            info = future.result()
+            for cpu in info:
+                if cpu['brand'].lower() == 'amd':  # Check if the CPU brand is AMD
+                    amd_cpus.append(cpu)
+
+    return jsonify({'amd_cpus': amd_cpus})  # Return JSON response with AMD CPU info
+
+
 
 @app.route("/gpu_info", methods=["GET"])  # Route to get GPU info
 def get_gpu_info():
