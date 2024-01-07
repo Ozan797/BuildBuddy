@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 const Card = ({ data }) => {
+  const openGoogleSearch = (name) => {
+    window.open(`https://www.google.com/search?q=${encodeURIComponent(name)}`, "_blank");
+  };
   // CPU Card
   const renderCPUCard = (cpu) => {
     return (
@@ -8,6 +11,8 @@ const Card = ({ data }) => {
         <p>Brand: {cpu.brand}</p>
         <p>Frequency: {cpu.frequency}MHz</p>
         <p>Price: £{cpu.price}</p>
+        <button onClick={() => openGoogleSearch(cpu.name)}>Google</button>
+
       </div>
     );
   };
