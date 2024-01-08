@@ -1,0 +1,25 @@
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust width as needed */
+    grid-template-rows: repeat(auto-fill, 1fr); /* Allow limitless rows */
+    max-width: 500px; /* Limiting the width to fit 4 columns */
+    gap: 20px; /* Adjust gap between columns/rows */
+    padding: 15px; /* Optional padding */
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
