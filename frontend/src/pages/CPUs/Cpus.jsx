@@ -26,7 +26,7 @@ const Cpus = () => {
   return (
     <section>
       <h1>CPU Page</h1>
-      <SearchComponent fetchData={fetchCPUData} /> {/* Use the search component */}
+      <SearchComponent fetchData={fetchCPUData} />
       <div className={styles.items}>
         <Card data={{cpu_info: cpuData}} className={styles.item} />
       </div>

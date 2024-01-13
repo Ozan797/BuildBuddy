@@ -4,23 +4,23 @@ const Card = ({ data }) => {
   const openGoogleSearch = (name) => {
     window.open(`https://www.google.com/search?q=${encodeURIComponent(name)}`, "_blank");
   };
+  
   // CPU Card
   const renderCPUCard = (cpu) => {
     return (
       <div className={styles.card}>
-        <h2>{cpu.name}</h2>
-        <p>Brand: {cpu.brand}</p>
-        <p>Frequency: {cpu.frequency}MHz</p>
-        <p>Price: £{cpu.price}</p>
-        <button onClick={() => openGoogleSearch(cpu.name)}>Google</button>
-
+        <h2 className={styles.name}>{cpu.name}</h2>
+        <p className={styles.brand}>Brand: {cpu.brand}</p>
+        <p className={styles.freq}>Frequency: {cpu.frequency}MHz</p>
+        <p className={styles.price}>Price: £{cpu.price}</p>
+        <button onClick={() => openGoogleSearch(cpu.name)}>Search on Google</button>
       </div>
     );
   };
   // GPU Card
   const renderGPUCard = (gpu) => {
     return (
-      <div className="gpuCard">
+      <div className={styles.card}>
         <h2>{gpu.name}</h2>
         <p>Brand: {gpu.brand}</p>
         <p>Memory: {gpu.memory}GB</p>
@@ -31,7 +31,7 @@ const Card = ({ data }) => {
   // Power Supply Card
   const renderPSUCard = (psu) => {
     return (
-      <div className="psuCard">
+      <div className={styles.card}>
         <h2>{psu.name}</h2>
         <p>Power: {psu.power}W</p>
         <p>Price: £{psu.price}</p>
@@ -41,7 +41,7 @@ const Card = ({ data }) => {
   // RAM Card
   const renderRAMCard = (ram) => {
     return (
-      <div className="ramCard">
+      <div className={styles.card}>
         <h2>{ram.name}</h2>
         <p>Brand: {ram.brand}</p>
         <p>RAM Type: {ram.ram_type}</p>
