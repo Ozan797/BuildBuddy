@@ -10,9 +10,9 @@ const Card = ({ data }) => {
     return (
       <div className={styles.card}>
         <h2 className={styles.name}>{cpu.name}</h2>
-        <p className={styles.brand}>Brand: {cpu.brand}</p>
-        <p className={styles.freq}>Frequency: {cpu.frequency}MHz</p>
-        <p className={styles.price}>Price: £{cpu.price}</p>
+        <p className={styles.space}>Brand: {cpu.brand}</p>
+        <p className={styles.space}>Frequency: {cpu.frequency}MHz</p>
+        <p className={styles.space}>Price: £{cpu.price}</p>
         <button onClick={() => openGoogleSearch(cpu.name)}>Search on Google</button>
       </div>
     );
@@ -21,10 +21,11 @@ const Card = ({ data }) => {
   const renderGPUCard = (gpu) => {
     return (
       <div className={styles.card}>
-        <h2>{gpu.name}</h2>
-        <p>Brand: {gpu.brand}</p>
-        <p>Memory: {gpu.memory}GB</p>
-        <p>Price: £{gpu.price}</p>
+        <h2 className={styles.name}>{gpu.name}</h2>
+        <p className={styles.space}>Brand: {gpu.brand}</p>
+        <p className={styles.space}>Memory: {gpu.memory}GB</p>
+        <p className={styles.space}>Price: £{gpu.price}</p>
+        <button onClick={() => openGoogleSearch(gpu.name)}>Search on Google</button>
       </div>
     );
   };
@@ -32,9 +33,10 @@ const Card = ({ data }) => {
   const renderPSUCard = (psu) => {
     return (
       <div className={styles.card}>
-        <h2>{psu.name}</h2>
-        <p>Power: {psu.power}W</p>
-        <p>Price: £{psu.price}</p>
+        <h2 className={styles.name}>{psu.name}</h2>
+        <p className={styles.space}>Power: {psu.power}W</p>
+        <p className={styles.space}>Price: £{psu.price}</p>
+        <button onClick={() => openGoogleSearch(psu.name)}>Search on Google</button>
       </div>
     );
   };
@@ -42,11 +44,12 @@ const Card = ({ data }) => {
   const renderRAMCard = (ram) => {
     return (
       <div className={styles.card}>
-        <h2>{ram.name}</h2>
-        <p>Brand: {ram.brand}</p>
-        <p>RAM Type: {ram.ram_type}</p>
-        <p>Frequency: {ram.frequency}MHz</p>
-        <p>Price: £{ram.price}</p>
+        <h2 className={styles.name}>{ram.name}</h2>
+        <p className={styles.space}>Brand: {ram.brand}</p>
+        <p className={styles.space}>RAM Type: {ram.ram_type}</p>
+        <p className={styles.space}>Frequency: {ram.frequency}MHz</p>
+        <p className={styles.space}>Price: £{ram.price}</p>
+        <button onClick={() => openGoogleSearch(ram.name)}>Search on Google</button>
       </div>
     );
   };

@@ -9,12 +9,6 @@
   font-size: 22px;
   padding-bottom: 10px;
 }
-.card .brand {
-  padding-bottom: 10px;
-}
-.card .freq {
-  padding-bottom: 10px;
-}
-.card .price {
+.card .space {
   padding-bottom: 10px;
 }/*# sourceMappingURL=Card.module.css.map */
