@@ -1,5 +1,6 @@
-# CostCompare
-CostCompare is a full-stack application aimed at retrieving various computer hardware components information through created API endpoints using Web Scrapers. It enables users to compare prices of selected items and implements features like sorting for efficient data analysis.
+# Build Buddy
+
+Build Buddy is a full-stack application aimed at retrieving various computer hardware components information through created API endpoints using Web Scrapers. It currently has features of data retrieval and Search functionality.
 
 ## TechStack
 - __Backend__: Python with Flask
@@ -21,7 +22,7 @@ The project has these key components
     - __`/cpu_info`__: Contains info for CPUs
     - __`/gpu_info`__: Contains info for GPUs
     - __`/ram_info`__: Contains info for RAM
-    - __`/psu_info`__: Contains info for Power Supplies
+    - __`/psu_info`__: Contains info for Power Supplies (in progress)
  
 ## How to Run Project
 - __Backend:__
@@ -35,7 +36,7 @@ The project has these key components
     - Start server with __`npm run dev`__
 
 ## Features table to implement:
-- __Search Functionality:__
+- __Search Functionality:__ (Complete)
     - Add a search bar allowing users to quickly find hardware based on names
 - __Pagination:__
     - Implement pagination for large lists of hardware to increase load time
@@ -43,10 +44,8 @@ The project has these key components
     - Include images with the items
 - __Copy to Clipboard:__
     - Allow users to copy details of hardware
-- __Error Handling:__
+- __Error Handling:__ (Complete)
     - Display user-friendly error messages for failed API requests and data retrieval issues
-- __Quick Compare Button:__
-    - Enable a "Quick Compare" feature allowing users to compare two different items instantly
 - __Third Party API's:__
     - Third party API integration for additional data or reviews on hardware
 - __Price Comparison Chart:__
