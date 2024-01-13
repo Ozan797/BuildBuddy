@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import styles from "./Card.module.css"
 const Card = ({ data }) => {
   const openGoogleSearch = (name) => {
     window.open(`https://www.google.com/search?q=${encodeURIComponent(name)}`, "_blank");
@@ -6,7 +7,7 @@ const Card = ({ data }) => {
   // CPU Card
   const renderCPUCard = (cpu) => {
     return (
-      <div className="cpuCard">
+      <div className={styles.card}>
         <h2>{cpu.name}</h2>
         <p>Brand: {cpu.brand}</p>
         <p>Frequency: {cpu.frequency}MHz</p>

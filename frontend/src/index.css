@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
+    font-family: "Poppins";
 }
 
 body {
-    background-color: #2c2c2c;
+    background-color: #040015;
     color: white;
+    
 }
 
 button {
@@ -15,11 +18,4 @@ button {
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
-}
-
-.cpuCard{
-    max-width: 200px;
-    background-color: #3f3f3f;
-    border-radius: 20px;
-    padding: 10px;
 }

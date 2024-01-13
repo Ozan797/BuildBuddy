@@ -4,6 +4,7 @@ import styles from "./Cpus.module.css";
 import axios from "axios";
 import SearchComponent from "../../components/Search/SearchComponent";
 
+
 const Cpus = () => {
   const [cpuData, setCpuData] = useState([]);
 
