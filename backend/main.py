@@ -33,30 +33,10 @@ def get_cpu_info():
                         seen_cpus.add(cpu['name'])  # Add CPU name to the set of seen CPUs
 
     return jsonify({'cpu_info': cpu_info})  # Return JSON response with CPU info
-@app.route('/amd_cpus', methods=['GET'])  # Route to get AMD CPUs only
-def get_amd_cpus():
-    cpu_urls_to_scrape = [
-        "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500",
-        "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500?offset=24",
-        "https://pricespy.co.uk/computers-accessories/computer-components/cpus--c500?offset=48",
-    ]
-
-    amd_cpus = []  # List to store AMD CPU info
-
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(scrape_cpu_info_from_url, url) for url in cpu_urls_to_scrape]
-        for future in concurrent.futures.as_completed(futures):
-            info = future.result()
-            for cpu in info:
-                if cpu['brand'].lower() == 'amd':  # Check if the CPU brand is AMD
-                    amd_cpus.append(cpu)
-
-    return jsonify({'amd_cpus': amd_cpus})  # Return JSON response with AMD CPU info
-
-
 
 @app.route("/gpu_info", methods=["GET"])  # Route to get GPU info
 def get_gpu_info():
+    search_query = request.args.get('search_query')  # Get the search query from the request URL
     # GPU URLs to scrape
     gpu_urls_to_scrape = [
         "https://pricespy.co.uk/c/graphics-cards",
@@ -72,14 +52,16 @@ def get_gpu_info():
         for future in concurrent.futures.as_completed(futures):
             info = future.result()  # Get the result of the completed task
             for gpu in info:
-                if gpu['name'] not in seen_gpus:  # Check for duplicates
-                    gpu_info.append(gpu)  # Add GPU info to the list
-                    seen_gpus.add(gpu['name'])  # Add GPU name to the set of seen GPUs
+                if search_query is None or search_query.lower() in gpu['name'].lower():
+                    if gpu['name'] not in seen_gpus:  # Check for duplicates
+                        gpu_info.append(gpu)  # Add GPU info to the list
+                        seen_gpus.add(gpu['name'])  # Add GPU name to the set of seen GPUs
 
     return jsonify({"gpu_info": gpu_info})  # Return JSON response with GPU info
 
 @app.route("/ram_info", methods=["GET"])  # Route to get GPU info
 def get_ram_info():
+    search_query = request.args.get('search_query')  # Get the search query from the request URL
     # GPU URLs to scrape
     ram_urls_to_scrape = [
         "https://pricespy.co.uk/c/ddr4-memory",
@@ -95,14 +77,17 @@ def get_ram_info():
         for future in concurrent.futures.as_completed(futures):
             info = future.result()  # Get the result of the completed task
             for ram in info:
-                if ram['name'] not in seen_rams:  # Check for duplicates
-                    ram_info.append(ram)  # Add ram info to the list
-                    seen_rams.add(ram['name'])  # Add ram name to the set of seen rams
+                if search_query is None or search_query.lower() in ram['name'].lower():
+
+                    if ram['name'] not in seen_rams:  # Check for duplicates
+                        ram_info.append(ram)  # Add ram info to the list
+                        seen_rams.add(ram['name'])  # Add ram name to the set of seen rams
 
     return jsonify({"ram_info": ram_info})  # Return JSON response with ram info
 
 @app.route("/psu_info", methods=["GET"])
 def get_psu_info():
+    search_query = request.args.get('search_query')  # Get the search query from the request URL
     psu_urls_to_scrape = [
         "https://pricespy.co.uk/c/power-supplies",
         "https://pricespy.co.uk/c/power-supplies?offset=44",

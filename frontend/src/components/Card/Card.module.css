@@ -1,0 +1,14 @@
+.card {
+  max-width: 280px;
+  background-color: #070024;
+  border-radius: 20px;
+  padding: 15px;
+  min-height: 270px;
+}
+.card .name {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
+.card .space {
+  padding-bottom: 10px;
+}/*# sourceMappingURL=Card.module.css.map */

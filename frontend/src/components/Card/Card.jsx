@@ -1,51 +1,55 @@
 /* eslint-disable react/prop-types */
+import styles from "./Card.module.css"
 const Card = ({ data }) => {
   const openGoogleSearch = (name) => {
     window.open(`https://www.google.com/search?q=${encodeURIComponent(name)}`, "_blank");
   };
+  
   // CPU Card
   const renderCPUCard = (cpu) => {
     return (
-      <div className="cpuCard">
-        <h2>{cpu.name}</h2>
-        <p>Brand: {cpu.brand}</p>
-        <p>Frequency: {cpu.frequency}MHz</p>
-        <p>Price: £{cpu.price}</p>
-        <button onClick={() => openGoogleSearch(cpu.name)}>Google</button>
-
+      <div className={styles.card}>
+        <h2 className={styles.name}>{cpu.name}</h2>
+        <p className={styles.space}>Brand: {cpu.brand}</p>
+        <p className={styles.space}>Frequency: {cpu.frequency}MHz</p>
+        <p className={styles.space}>Price: £{cpu.price}</p>
+        <button onClick={() => openGoogleSearch(cpu.name)}>Search on Google</button>
       </div>
     );
   };
   // GPU Card
   const renderGPUCard = (gpu) => {
     return (
-      <div className="gpuCard">
-        <h2>{gpu.name}</h2>
-        <p>Brand: {gpu.brand}</p>
-        <p>Memory: {gpu.memory}GB</p>
-        <p>Price: £{gpu.price}</p>
+      <div className={styles.card}>
+        <h2 className={styles.name}>{gpu.name}</h2>
+        <p className={styles.space}>Brand: {gpu.brand}</p>
+        <p className={styles.space}>Memory: {gpu.memory}GB</p>
+        <p className={styles.space}>Price: £{gpu.price}</p>
+        <button onClick={() => openGoogleSearch(gpu.name)}>Search on Google</button>
       </div>
     );
   };
   // Power Supply Card
   const renderPSUCard = (psu) => {
     return (
-      <div className="psuCard">
-        <h2>{psu.name}</h2>
-        <p>Power: {psu.power}W</p>
-        <p>Price: £{psu.price}</p>
+      <div className={styles.card}>
+        <h2 className={styles.name}>{psu.name}</h2>
+        <p className={styles.space}>Power: {psu.power}W</p>
+        <p className={styles.space}>Price: £{psu.price}</p>
+        <button onClick={() => openGoogleSearch(psu.name)}>Search on Google</button>
       </div>
     );
   };
   // RAM Card
   const renderRAMCard = (ram) => {
     return (
-      <div className="ramCard">
-        <h2>{ram.name}</h2>
-        <p>Brand: {ram.brand}</p>
-        <p>RAM Type: {ram.ram_type}</p>
-        <p>Frequency: {ram.frequency}MHz</p>
-        <p>Price: £{ram.price}</p>
+      <div className={styles.card}>
+        <h2 className={styles.name}>{ram.name}</h2>
+        <p className={styles.space}>Brand: {ram.brand}</p>
+        <p className={styles.space}>RAM Type: {ram.ram_type}</p>
+        <p className={styles.space}>Frequency: {ram.frequency}MHz</p>
+        <p className={styles.space}>Price: £{ram.price}</p>
+        <button onClick={() => openGoogleSearch(ram.name)}>Search on Google</button>
       </div>
     );
   };

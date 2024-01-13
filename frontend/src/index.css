@@ -1,25 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
+    font-family: "Poppins";
 }
 
 body {
-    background-color: #2c2c2c;
+    background-color: #040015;
     color: white;
+    
 }
 
 button {
-    background-color: #2c2c2c;
-    color: white;
-    border: 2px blue solid;
-    padding: 10px;
-    border-radius: 10px;
+    border: 2px solid white;
     cursor: pointer;
-}
-
-.cpuCard{
-    max-width: 200px;
-    background-color: #3f3f3f;
-    border-radius: 20px;
+    background-color: transparent;
     padding: 10px;
-}
+    color: white;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    scale: 1.05;
+    background-color: var(--deep-blue);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  
+  }
